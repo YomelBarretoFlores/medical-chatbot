@@ -2,19 +2,8 @@ body,
 html {
     height: 100%;
     margin: 0;
-    background: rgb(44, 47, 59);
-    background: -webkit-linear-gradient(
-        to right,
-        rgb(40, 59, 34),
-        rgb(54, 60, 70),
-        rgb(32, 32, 43)
-    );
-    background: linear-gradient(
-        to right,
-        rgb(38, 51, 61),
-        rgb(50, 55, 65),
-        rgb(33, 33, 78)
-    );
+    background: #f0f2f5;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .chat {
@@ -22,9 +11,11 @@ html {
     margin-bottom: auto;
 }
 .card {
-    height: 500px;
+    height: 85vh;
     border-radius: 15px !important;
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: none !important;
 }
 .contacts_body {
     padding: 0.75rem 0 !important;
@@ -33,14 +24,19 @@ html {
 }
 .msg_card_body {
     overflow-y: auto;
+    background-color: #e5ddd5;
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png"); /* WhatsApp-like subtle pattern */
 }
 .card-header {
     border-radius: 15px 15px 0 0 !important;
     border-bottom: 0 !important;
+    background-color: #075e54 !important;
+    color: white;
 }
 .card-footer {
     border-radius: 0 0 15px 15px !important;
     border-top: 0 !important;
+    background-color: #f0f0f0 !important;
 }
 .container {
     align-content: center;
@@ -56,11 +52,13 @@ html {
     outline: 0px !important;
 }
 .type_msg {
-    background-color: rgba(0, 0, 0, 0.3) !important;
+    background-color: rgba(255, 255, 255, 1) !important;
     border: 0 !important;
-    color: white !important;
+    color: #4a4a4a !important;
     height: 60px !important;
     overflow-y: auto;
+    border-radius: 30px 0 0 30px !important;
+    padding-left: 20px;
 }
 .type_msg:focus {
     box-shadow: none !important;
@@ -74,11 +72,12 @@ html {
     cursor: pointer;
 }
 .send_btn {
-    border-radius: 0 15px 15px 0 !important;
-    background-color: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 0 30px 30px 0 !important;
+    background-color: #128c7e !important;
     border: 0 !important;
     color: white !important;
     cursor: pointer;
+    width: 60px;
 }
 .search_btn {
     border-radius: 0 15px 15px 0 !important;
@@ -142,7 +141,7 @@ html {
 }
 .user_info p {
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
 }
 .video_cam {
     margin-left: 50px;
@@ -158,33 +157,42 @@ html {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 10px;
-    border-radius: 25px;
-    background-color: rgb(82, 172, 255);
+    border-radius: 0 25px 25px 25px;
+    background-color: #ffffff;
     padding: 10px;
     position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #333;
+    max-width: 80%;
 }
 .msg_cotainer_send {
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 10px;
-    border-radius: 25px;
-    background-color: #58cc71;
+    border-radius: 25px 0 25px 25px;
+    background-color: #dcf8c6;
     padding: 10px;
     position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #333;
+    max-width: 80%;
 }
 .msg_time {
     position: absolute;
     left: 0;
-    bottom: -15px;
-    color: rgba(255, 255, 255, 0.5);
+    bottom: -18px;
+    color: #777;
     font-size: 10px;
+    width: 100px;
 }
 .msg_time_send {
     position: absolute;
     right: 0;
-    bottom: -15px;
-    color: rgba(255, 255, 255, 0.5);
+    bottom: -18px;
+    color: #777;
     font-size: 10px;
+    width: 100px;
+    text-align: right;
 }
 .msg_head {
     position: relative;
@@ -229,4 +237,27 @@ html {
     .contacts_card {
         margin-bottom: 15px !important;
     }
+    .card {
+        height: 100vh;
+        border-radius: 0 !important;
+    }
+    .card-header {
+        border-radius: 0 !important;
+    }
+    .card-footer {
+        border-radius: 0 !important;
+    }
+}
+/* Scrollbar custom styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

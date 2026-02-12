@@ -39,15 +39,16 @@
                             <div class="d-flex bd-highlight">
                                 <div class="img_cont">
                                     <img
-                                        src="https://cdn-icons-png.flaticon.com/512/387/387569.png"
+                                        src="https://ui-avatars.com/api/?name=Medical+Bot&background=0D8ABC&color=fff"
                                         class="rounded-circle user_img"
                                     />
-
                                     <span class="online_icon"></span>
                                 </div>
                                 <div class="user_info">
-                                    <span>Medical Chatbot</span>
-                                    <p>Ask me anything!</p>
+                                    <span>Asistente Médico</span>
+                                    <p>
+                                        Pregúntame sobre anatomía y fisiología
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +62,7 @@
                                     type="text"
                                     id="text"
                                     name="msg"
-                                    placeholder="Type your message..."
+                                    placeholder="Escribe tu consulta médica..."
                                     autocomplete="off"
                                     class="form-control type_msg"
                                     required
@@ -72,7 +73,7 @@
                                         id="send"
                                         class="input-group-text send_btn"
                                     >
-                                        <i class="fas fa-location-arrow"></i>
+                                        <i class="fas fa-paper-plane"></i>
                                     </button>
                                 </div>
                             </form>
@@ -96,10 +97,11 @@
                         rawText +
                         '<span class="msg_time_send">' +
                         str_time +
-                        '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
+                        '</span></div><div class="img_cont_msg"><img src="https://ui-avatars.com/api/?name=User&background=58cc71&color=fff" class="rounded-circle user_img_msg"></div></div>';
 
                     $("#text").val("");
                     $("#messageFormeight").append(userHtml);
+                    scrollToBottom();
 
                     $.ajax({
                         data: {
@@ -109,15 +111,22 @@
                         url: "/get",
                     }).done(function (data) {
                         var botHtml =
-                            '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' +
+                            '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://ui-avatars.com/api/?name=Medical+Bot&background=0D8ABC&color=fff" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' +
                             data +
                             '<span class="msg_time">' +
                             str_time +
                             "</span></div></div>";
                         $("#messageFormeight").append($.parseHTML(botHtml));
+                        scrollToBottom();
                     });
                     event.preventDefault();
                 });
+
+                function scrollToBottom() {
+                    var messageBody =
+                        document.getElementById("messageFormeight");
+                    messageBody.scrollTop = messageBody.scrollHeight;
+                }
             });
         </script>
     </body>
